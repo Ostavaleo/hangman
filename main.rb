@@ -21,5 +21,3 @@ end
 
 # Вывести финальное состояние игры
 console_interface.print_out
-
-
