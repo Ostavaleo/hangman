@@ -1,20 +1,10 @@
-class String
-  def ==(other)
-    return false unless other.is_a?(String)
-    two_chars = [ord, other.ord].sort
-    return true if two_chars == [1025, 1045]
-    super
-  end
-end
-
 class Game
-
   TOTAL_ERRORS_ALLOWED = 7
 
-def initialize(word)
-  @letters = word.chars
-  @user_guesses = []
-end
+  def initialize(word)
+    @letters = word.chars
+    @user_guesses = []
+  end
 
   def normalize_letter(letter)
     case letter

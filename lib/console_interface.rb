@@ -1,22 +1,11 @@
-
-if (Gem.win_platform?)
-  Encoding.default_external = Encoding.find(Encoding.locale_charmap)
-  Encoding.default_internal = __ENCODING__
-
-  [STDIN, STDOUT].each do |io|
-    io.set_encoding(Encoding.default_external, Encoding.default_internal)
-  end
-end
-
 class ConsoleInterface
-
   FIGURES =
     Dir[__dir__ + '/../data/figures/*.txt'].
     sort.
     map {|file_name| File.read(file_name)}
 
   def initialize(game)
-  @game = game
+    @game = game
   end
 
   def print_out
